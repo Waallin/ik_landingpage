@@ -79,8 +79,25 @@
                 </p>
               </blockquote>
               
-              <p class="text-white small" data-aos="fade-up" data-aos-delay="150" style="font-family: 'Roboto', sans-serif;">
-              </p>
+              <div class="special-offer" data-aos="fade-up" data-aos-delay="150" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <div class="ios-offer">
+                  <p style="font-family: 'Roboto', sans-serif; color: white; font-weight: 500; margin: 0;">
+                    ✨ Prova Premium gratis i 2 månader
+                  </p>
+                  <p style="font-family: 'Roboto', sans-serif; color: rgba(255, 255, 255, 0.8); font-size: 0.9em; margin: 5px 0 0 0;">
+                    Begränsat erbjudande - <a href="https://apps.apple.com/redeem/?ctx=offercodes&id=6737434122&code=FREEDC" style="color: #3498db; text-decoration: underline;">Klicka här för att aktivera</a>
+                  </p>
+                </div>
+                <div class="android-offer">
+                  <p style="font-family: 'Roboto', sans-serif; color: white; font-weight: 500; margin: 0;">
+                    ✨ Alla funktioner upplåsta
+                  </p>
+                  <p style="font-family: 'Roboto', sans-serif; color: rgba(255, 255, 255, 0.8); font-size: 0.9em; margin: 5px 0 0 0;">
+                    Begränsat lanseringserbjudande för Android
+                  </p>
+                </div>
+              </div>
+
               <div class="d-flex justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
                 <a
                   href="https://apps.apple.com/us/app/insynskollen/id6737434122"
@@ -313,5 +330,21 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isAndroid = userAgent.indexOf("android") > -1;
+        const isIOS = /iphone|ipad|ipod/.test(userAgent);
+        
+        document.querySelector('.ios-offer').style.display = isIOS ? 'block' : 'none';
+        document.querySelector('.android-offer').style.display = isAndroid ? 'block' : 'none';
+        
+        // Om varken iOS eller Android, visa iOS-erbjudandet som default
+        if (!isIOS && !isAndroid) {
+          document.querySelector('.ios-offer').style.display = 'block';
+        }
+      });
+    </script>
   </body>
 </html>
