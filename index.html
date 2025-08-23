@@ -680,9 +680,23 @@
 
     <script>
       function scrollToDownload() {
-        document.getElementById("download").scrollIntoView({
-          behavior: "smooth",
-        });
+        // Detektera användarens enhet
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isIOS = /iphone|ipad|ipod/.test(userAgent);
+        const isAndroid = /android/.test(userAgent);
+        
+        if (isIOS) {
+          // Dirigera till App Store för iOS
+          window.open('https://apps.apple.com/us/app/insynskollen/id6737434122', '_blank');
+        } else if (isAndroid) {
+          // Dirigera till Play Store för Android
+          window.open('https://play.google.com/store/apps/details?id=com.devember.Insynskollen', '_blank');
+        } else {
+          // För andra enheter (desktop etc.), rulla ner till download-sektionen
+          document.getElementById("download").scrollIntoView({
+            behavior: "smooth",
+          });
+        }
       }
 
       function toggleFAQ(element) {
