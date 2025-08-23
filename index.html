@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Insynskollen</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title>Insynskollen - Få koll på insiders innan alla andra</title>
+    <meta
+      name="description"
+      content="Upptäck vilka aktier insiders köper just nu. Sveriges smartaste app för insynshandel ger dig försprång på börsen med realtidsdata från Finansinspektionen."
+    />
+    <meta
+      name="keywords"
+      content="insynshandel, insider trading, aktier, börsen, Stockholmsbörsen, investeringar, finansinspektionen"
+    />
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
@@ -38,13 +44,114 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
 
-    <!-- =======================================================
-  * Template Name: Nova
-  * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <style>
+      .urgent-cta {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+        border: none;
+        padding: 18px 35px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+      }
+
+      .urgent-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(231, 76, 60, 0.4);
+        background: linear-gradient(135deg, #c0392b, #a93226);
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
+        }
+        100% {
+          box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+      }
+
+      .exclusive-badge {
+        background: linear-gradient(45deg, #f39c12, #e67e22);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9em;
+        display: inline-block;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .testimonial-card {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        border-left: 4px solid #3aa0e9;
+      }
+
+      .faq-item {
+        background: white;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+      }
+
+      .faq-question {
+        background: #f8f9fa;
+        padding: 20px;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        text-align: left;
+        font-weight: 600;
+        font-size: 1.1em;
+        transition: background 0.3s ease;
+      }
+
+      .faq-question:hover {
+        background: #e9ecef;
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-answer.active {
+        padding: 20px;
+        max-height: 200px;
+      }
+
+      .app-badges {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin: 30px 0;
+      }
+
+      .app-badge {
+        height: 60px;
+        transition: transform 0.3s ease;
+      }
+
+      .app-badge:hover {
+        transform: scale(1.05);
+      }
+    </style>
   </head>
 
   <body class="index-page">
@@ -53,9 +160,7 @@
         class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
       >
         <a href="index.html" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">Devember</h1>
+          <h1 class="sitename">Insynskollen</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -63,6 +168,7 @@
         </nav>
       </div>
     </header>
+
     <main class="main">
       <!-- Hero Section -->
       <section id="hero" class="hero section dark-background">
@@ -70,230 +176,470 @@
 
         <div class="container text-center">
           <div class="row justify-content-center">
-            <div class="col-xl-4">
-              <h1 data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: 900; letter-spacing: -1px; font-size: 2.5em; background: linear-gradient(45deg, #3AA0E9, #2196F3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 3px 3px 6px rgba(0,0,0,0.1);">Insynskollen</h1>
-              <blockquote data-aos="fade-up" data-aos-delay="100">
-                <p style="font-family: 'Roboto', sans-serif; font-size: 1.2em; line-height: 1.6; font-weight: 400;">
-                  Sveriges ledande app för insiderhandel! Få realtidsuppdateringar och smarta filter 
-                  som ger dig ett försprång på börsen.
-                </p>
-              </blockquote>
-              
-              <div class="special-offer" data-aos="fade-up" data-aos-delay="150" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid rgba(255, 255, 255, 0.2);">
-                <div class="ios-offer">x
-                  <p style="font-family: 'Roboto', sans-serif; color: white; font-weight: 500; margin: 0;">
-                    ✨ Prova Premium gratis i 2 månader
-                  </p>
-                  <p style="font-family: 'Roboto', sans-serif; color: rgba(255, 255, 255, 0.8); font-size: 0.9em; margin: 5px 0 0 0;">
-                    Använd kod: FREESTART - <a href="https://apps.apple.com/redeem/?ctx=offercodes&id=6737434122&code=FREESTART" style="color: #3498db; text-decoration: underline;">Aktivera här</a>
-                  </p>
-                </div>
-                <div class="android-offer">
-                  <p style="font-family: 'Roboto', sans-serif; color: white; font-weight: 500; margin: 0;">
-                    ✨ Prova Premium gratis i 2 månader
-                  </p>
-                  <p style="font-family: 'Roboto', sans-serif; color: rgba(255, 255, 255, 0.8); font-size: 0.9em; margin: 5px 0 0 0;">
-                    Ladda ner appen och ange kod: free60 vid betalväggen för att aktivera
-                  </p>
-                </div>
+            <div class="col-xl-8">
+              <div class="exclusive-badge" data-aos="fade-up">
+                🔥 Exklusiv insiderinformation
               </div>
 
-              <div class="d-flex justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
+              <h1
+                data-aos="fade-up"
+                data-aos-delay="100"
+                style="
+                  font-family: 'Montserrat', sans-serif;
+                  font-weight: 900;
+                  letter-spacing: -1px;
+                  font-size: 2.3rem;
+                  background: linear-gradient(45deg, #3aa0e9, #2196f3);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+                  margin-bottom: 20px;
+                  margin-top: 20px;
+                "
+              >
+                Få koll på insiders innan alla andra
+              </h1>
+
+              <h2
+                data-aos="fade-up"
+                data-aos-delay="150"
+                style="
+                  font-family: 'Roboto', sans-serif;
+                  font-size: 1.8em;
+                  font-weight: 400;
+                  color: #fff;
+                  margin-bottom: 25px;
+                "
+              >
+                Upptäck vilka aktier de köper just nu
+              </h2>
+
+              <blockquote data-aos="fade-up" data-aos-delay="200">
+                <p
+                  style="
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 1.3em;
+                    line-height: 1.6;
+                    font-weight: 400;
+                    color: rgba(255, 255, 255, 0.9);
+                  "
+                >
+                  Sveriges smartaste app för insynshandel ger dig försprång på
+                  börsen med realtidsdata direkt från Finansinspektionen
+                </p>
+              </blockquote>
+
+              <div
+                class="special-offer"
+                data-aos="fade-up"
+                data-aos-delay="250"
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  padding: 20px;
+                  border-radius: 15px;
+                  margin: 30px 0;
+                  border: 2px solid rgba(255, 255, 255, 0.2);
+                "
+              >
+                <p
+                  style="
+                    font-family: 'Roboto', sans-serif;
+                    color: white;
+                    font-weight: 600;
+                    margin: 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  ⚡ Uppdateras varje dag – bli först att se insiderköpen
+                </p>
+                <p
+                  style="
+                    font-family: 'Roboto', sans-serif;
+                    color: rgba(255, 255, 255, 0.8);
+                    margin: 5px 0 0 0;
+                    font-size: 0.95em;
+                  "
+                >
+                  Tusentals affärer varje år, filtrerade och levererade till dig
+                </p>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-delay="300"
+                style="margin: 40px 0"
+              >
+                <button class="urgent-cta" onclick="scrollToDownload()">
+                  Missar du insiderköpen? Hämta appen nu!
+                </button>
+              </div>
+
+              <div class="app-badges" data-aos="fade-up" data-aos-delay="350">
                 <a
                   href="https://apps.apple.com/us/app/insynskollen/id6737434122"
-                  class="btn-get-started d-flex align-items-center gap-2"
-                  style="font-family: 'Roboto', sans-serif; background-color: #2d3436; border: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.backgroundColor='#636e72'"
-                  onmouseout="this.style.backgroundColor='#2d3436'"
-                  ><i class="bi bi-apple fs-5"></i>App Store</a
+                  target="_blank"
                 >
-                <a 
+                </a>
+                <a
                   href="https://play.google.com/store/apps/details?id=com.devember.Insynskollen"
-                  class="btn-get-started d-flex align-items-center gap-2"
-                  style="font-family: 'Roboto', sans-serif; background-color: #2196F3; border: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.backgroundColor='#00d1a7'"
-                  onmouseout="this.style.backgroundColor='#00b894'"
-                  ><i class="bi bi-google-play fs-5"></i>Google Play</a
+                  target="_blank"
                 >
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Why Us Section -->
-      <section id="why-us" class="why-us section">
+      <!-- Social Proof Section -->
+      <section id="testimonials" class="section light-background">
+        <div class="container">
+          <div class="section-title text-center" data-aos="fade-up">
+            <h2>Så här använder proffsen det</h2>
+            <p>
+              Med Insynskollen har du alltid full koll på marknaden – ett
+              knapptryck bort ser du exakt var insiders handlar just nu och kan
+              snabbt hitta intressanta case med riktig edge.
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="testimonial-card">
+                <p>
+                  <em
+                    >"Jag vill aldrig missa när insiders gör stora affärer. Med
+                    Insynskollen ser jag direkt var det händer och kan agera
+                    snabbare än marknaden. En ovärderlig edge för mig!"</em
+                  >
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                  <div>
+                    <h5 class="mb-0">Marcus L.</h5>
+                    <small class="text-muted">Aktiv investerare</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="testimonial-card">
+                <p>
+                  <em
+                    >"Med ett knapptryck får jag full överblick över
+                    insiderköpen och kan snabbt hitta nya spännande case. Jag
+                    känner mig alltid steget före!"</em
+                  >
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                  <div>
+                    <h5 class="mb-0">Anna K.</h5>
+                    <small class="text-muted">Privatinvesterare</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="why-us section">
         <div class="container section-title" data-aos="fade-up">
-          <h2>Så här fungerar Insynskollen</h2>
-          <p>En enkel och kraftfull app för att följa insideraffärer</p>
+          <h2>Så här fungerar insynshandel</h2>
+          <p>
+            Förstå varför insiders har försprång – och hur du kan dra nytta av
+            det
+          </p>
         </div>
 
         <div class="container">
           <div class="row gy-4">
             <div
-              class="col-lg-4 col-md-6"
+              class="col-lg-3 col-md-6"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="service-item d-flex">
-                <div class="icon flex-shrink-0">
-                  <i class="bi bi-graph-up" style="color: #f57813"></i>
+              <div
+                class="service-item d-flex flex-column text-center"
+                style="
+                  padding: 30px;
+                  background: white;
+                  border-radius: 15px;
+                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                  height: 100%;
+                "
+              >
+                <div class="icon mb-3">
+                  <i
+                    class="bi bi-eye"
+                    style="color: #f57813; font-size: 3em"
+                  ></i>
                 </div>
-                <div>
-                  <h4 class="title">Realtidsuppdateringar</h4>
-                  <p class="description">
-                    Få dagliga uppdateringar om alla insideraffärer på
-                    Stockholmsbörsen direkt i din telefon
-                  </p>
-                </div>
+                <h4 class="title">Vad appen gör</h4>
+                <p class="description">
+                  Samlar alla insiderköp och försäljningar från
+                  Stockholmsbörsen. Få full överblick över vad företagsledare
+                  och styrelsemedlemmar handlar.
+                </p>
               </div>
             </div>
 
             <div
-              class="col-lg-4 col-md-6"
+              class="col-lg-3 col-md-6"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div class="service-item d-flex">
-                <div class="icon flex-shrink-0">
-                  <i class="bi bi-filter" style="color: #15a04a"></i>
+              <div
+                class="service-item d-flex flex-column text-center"
+                style="
+                  padding: 30px;
+                  background: white;
+                  border-radius: 15px;
+                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                  height: 100%;
+                "
+              >
+                <div class="icon mb-3">
+                  <i
+                    class="bi bi-lightbulb"
+                    style="color: #15a04a; font-size: 3em"
+                  ></i>
                 </div>
-                <div>
-                  <h4 class="title">Smarta filter</h4>
-                  <p class="description">
-                    Filtrera transaktioner baserat på aktiekurs och andra
-                    parametrar för att hitta relevanta affärer
-                  </p>
-                </div>
+                <h4 class="title">Varför det är relevant</h4>
+                <p class="description">
+                  Insynspersoner har ofta bättre information om företagets
+                  framtid. När de köper aktier kan det signalera kommande
+                  positiva nyheter.
+                </p>
               </div>
             </div>
 
             <div
-              class="col-lg-4 col-md-6"
+              class="col-lg-3 col-md-6"
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <div class="service-item d-flex">
-                <div class="icon flex-shrink-0">
-                  <i class="bi bi-lightning" style="color: #d90769"></i>
+              <div
+                class="service-item d-flex flex-column text-center"
+                style="
+                  padding: 30px;
+                  background: white;
+                  border-radius: 15px;
+                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                  height: 100%;
+                "
+              >
+                <div class="icon mb-3">
+                  <i
+                    class="bi bi-phone"
+                    style="color: #d90769; font-size: 3em"
+                  ></i>
                 </div>
-                <div>
-                  <h4 class="title">Snabb och pålitlig</h4>
-                  <p class="description">
-                    All data hämtas direkt från Finansinspektionen vilket
-                    garanterar pålitlig och alltid uppdaterad information
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-5 position-relative" data-aos="zoom-out" data-aos-delay="200">
-              <div class="phone-wrap text-center">
-                <img src="assets/img/ik.png" alt="Image" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="call-to-action"
-        class="call-to-action section dark-background"
-      >
-        <img src="assets/img/finance2.jpg" alt="" />
-
-        <div class="container">
-          <div
-            class="row justify-content-center"
-            data-aos="zoom-in"
-            data-aos-delay="100"
-          >
-            <div class="col-xl-10">
-              <div class="text-center">
-                <h3>Följ oss på Instagram</h3>
-                <p>
-                  Håll dig uppdaterad med de senaste nyheterna och insikterna om insiderhandel. 
-                  Följ oss på Instagram för dagliga uppdateringar, erbjudanden och tips om 
-                  hur du kan få ut mest av Insynskollen.
+                <h4 class="title">Hur enkelt det är</h4>
+                <p class="description">
+                  Öppna appen varje dag och få koll direkt. Inga komplicerade
+                  analyser – bara ren, användbar information på sekunder.
                 </p>
-                <a class="cta-btn" href="https://www.instagram.com/insynskollen_app">@insynskollen_app</a>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div
+                class="service-item d-flex flex-column text-center"
+                style="
+                  padding: 30px;
+                  background: white;
+                  border-radius: 15px;
+                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                  height: 100%;
+                "
+              >
+                <div class="icon mb-3">
+                  <i
+                    class="bi bi-graph-up-arrow"
+                    style="color: #4233ff; font-size: 3em"
+                  ></i>
+                </div>
+                <h4 class="title">Vad du tjänar på det</h4>
+                <p class="description">
+                  Möjlighet till smartare investeringsbeslut genom att följa
+                  samma mönster som professionella investerare använder.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center mt-4">
+            <div
+              class="col-lg-8 text-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                style="
+                  background: white;
+                  padding: 30px;
+                  border-radius: 15px;
+                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="assets/img/ik.png"
+                  alt="Insynskollen app screenshot"
+                  class="img-fluid"
+                  style="max-height: 400px"
+                />
+                <p class="mt-3">
+                  <strong>Live från appen:</strong> Se exakt vilka aktier
+                  insiders köper just nu
+                </p>
               </div>
             </div>
           </div>
         </div>
-
       </section>
-      <!-- /Call To Action Section -->
 
       <!-- Features Section -->
       <section id="features" class="features section">
         <div class="container">
           <div class="row">
-            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="mb-0">Varför välja</h3>
-              <h3>Insynskollen?</h3>
+            <div
+              class="col-lg-12 text-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3 class="mb-4">Varför välja Insynskollen?</h3>
 
               <div class="row gy-4">
-                <div class="col-md-6">
-                  <div class="icon-list d-flex">
-                    <i class="bi bi-graph-up" style="color: #5578ff"></i>
-                    <span>Följ trender och mönster i handeln</span>
+                <div class="col-md-4">
+                  <div
+                    class="icon-list d-flex flex-column align-items-center text-center p-4"
+                  >
+                    <i
+                      class="bi bi-shield-check mb-3"
+                      style="color: #5578ff; font-size: 3em"
+                    ></i>
+                    <h5>Verifierad data från FI</h5>
+                    <span
+                      >All information kommer direkt från
+                      Finansinspektionen</span
+                    >
                   </div>
                 </div>
-                <!-- End Icon List Item-->
 
-                <div class="col-md-6">
-                  <div class="icon-list d-flex">
-                    <i class="bi bi-shield-check" style="color: #ffa76e"></i>
-                    <span>Verifierad data från FI</span>
+                <div class="col-md-4">
+                  <div
+                    class="icon-list d-flex flex-column align-items-center text-center p-4"
+                  >
+                    <i
+                      class="bi bi-lightning mb-3"
+                      style="color: #ffa76e; font-size: 3em"
+                    ></i>
+                    <h5>Realtidsuppdateringar</h5>
+                    <span
+                      >Få notiser direkt när nya insideraffärer
+                      rapporteras</span
+                    >
                   </div>
                 </div>
-                <!-- End Icon List Item-->
 
-                <div class="col-md-6">
-                  <div class="icon-list d-flex">
-                    <i class="bi bi-filter-square" style="color: #11dbcf"></i>
-                    <span>Anpassningsbara filter</span>
+                <div class="col-md-4">
+                  <div
+                    class="icon-list d-flex flex-column align-items-center text-center p-4"
+                  >
+                    <i
+                      class="bi bi-filter-square mb-3"
+                      style="color: #11dbcf; font-size: 3em"
+                    ></i>
+                    <h5>Smarta filter</h5>
+                    <span
+                      >Hitta exakt de affärer som är relevanta för din
+                      strategi</span
+                    >
                   </div>
                 </div>
-                <!-- End Icon List Item-->
-
-                <div class="col-md-6">
-                  <div class="icon-list d-flex">
-                    <i class="bi bi-lightning" style="color: #4233ff"></i>
-                    <span>Snabba uppdateringar</span>
-                  </div>
-                </div>
-                <!-- End Icon List Item-->
-
-                <div class="col-md-6">
-                  <div class="icon-list d-flex">
-                    <i class="bi bi-phone" style="color: #ff5828"></i>
-                    <span>Användarvänlig och snabb</span>
-                  </div>
-                </div>
-                <!-- End Icon List Item-->
               </div>
-            </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- /Features Section -->
 
-      <!-- Recent Posts Section -->
-      <section id="recent-posts" class="recent-posts section">
-        <!-- Section Title -->
+      <!-- FAQ Section -->
+      <section id="faq" class="section light-background">
+        <div class="container">
+          <div class="section-title text-center" data-aos="fade-up">
+            <h2>Vanliga frågor</h2>
+            <p>Allt du behöver veta om Insynskollen</p>
+          </div>
 
-        <!-- End Section Title -->
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  Är det lagligt att använda insiderinformation?
+                  <i class="bi bi-chevron-down float-end"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Ja, det är helt lagligt! All information i appen kommer från
+                    offentliga rapporter som insiders är skyldiga att lämna till
+                    Finansinspektionen. Detta är publik information som alla kan
+                    ta del av.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  Var kommer datan ifrån?
+                  <i class="bi bi-chevron-down float-end"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    All data hämtas direkt från Finansinspektionens officiella
+                    databas. Vi uppdaterar informationen dagligen för att
+                    säkerställa att du alltid har den senaste informationen.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  Är appen gratis? <i class="bi bi-chevron-down float-end"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Appen är gratis att ladda ner och innehåller grundläggande
+                    funktioner. För avancerade filter och realtidsnotiser finns
+                    en Premium-version tillgänglig.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  Hur ofta uppdateras informationen?
+                  <i class="bi bi-chevron-down float-end"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Vi uppdaterar databasen flera gånger dagligen. Insiders har
+                    upp till 5 arbetsdagar på sig att rapportera sina affärer,
+                    så ny information tillkommer kontinuerligt.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      <!-- /Recent Posts Section -->
     </main>
 
     <footer id="footer" class="footer light-background">
-      <div class="footer-top"></div>
-
       <div class="container copyright text-center">
         <p>
           © <span>Copyright</span> <strong class="px-1">Insynskollen</strong>
@@ -303,7 +649,9 @@
           All detaljerad information om datainsamling, användarvillkor och
           integritetspolicy finns tillgänglig i App Store.
           <br />
-          <a href="[länk till app store]">Läs mer i App Store</a>
+          <a href="https://apps.apple.com/us/app/insynskollen/id6737434122"
+            >Läs mer i App Store</a
+          >
         </p>
       </div>
     </footer>
@@ -332,18 +680,45 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      function scrollToDownload() {
+        document.getElementById("download").scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        const icon = element.querySelector("i");
+
+        // Close all other FAQ items
+        document.querySelectorAll(".faq-answer").forEach((item) => {
+          if (item !== answer) {
+            item.classList.remove("active");
+          }
+        });
+
+        document.querySelectorAll(".faq-question i").forEach((item) => {
+          if (item !== icon) {
+            item.style.transform = "rotate(0deg)";
+          }
+        });
+
+        // Toggle current item
+        answer.classList.toggle("active");
+
+        if (answer.classList.contains("active")) {
+          icon.style.transform = "rotate(180deg)";
+        } else {
+          icon.style.transform = "rotate(0deg)";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
         const userAgent = navigator.userAgent.toLowerCase();
         const isAndroid = userAgent.indexOf("android") > -1;
         const isIOS = /iphone|ipad|ipod/.test(userAgent);
-        
-        document.querySelector('.ios-offer').style.display = isIOS ? 'block' : 'none';
-        document.querySelector('.android-offer').style.display = isAndroid ? 'block' : 'none';
-        
-        // Om varken iOS eller Android, visa iOS-erbjudandet som default
-        if (!isIOS && !isAndroid) {
-          document.querySelector('.ios-offer').style.display = 'block';
-        }
+
+        // Device-specific targeting could be added here if needed
       });
     </script>
   </body>
