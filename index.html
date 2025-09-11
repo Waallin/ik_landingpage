@@ -77,6 +77,58 @@
         }
       }
 
+      /* Sticky CTA Button */
+      .sticky-cta {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+        border: none;
+        padding: 18px 35px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 200px;
+        justify-content: center;
+      }
+
+      .sticky-cta:hover {
+        transform: translateX(-50%) translateY(-3px);
+        box-shadow: 0 12px 35px rgba(231, 76, 60, 0.4);
+        background: linear-gradient(135deg, #c0392b, #a93226);
+        color: white;
+        text-decoration: none;
+      }
+
+      .sticky-cta:focus {
+        outline: none;
+        color: white;
+      }
+
+      /* Hide sticky CTA on hero section to avoid overlap */
+      .hero-visible .sticky-cta {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Show sticky CTA when scrolled */
+      .sticky-cta.show {
+        opacity: 1;
+        pointer-events: all;
+      }
+
       .exclusive-badge {
         background: linear-gradient(45deg, #f39c12, #e67e22);
         color: white;
@@ -442,26 +494,10 @@
 
         <div class="container">
           <div class="row gy-4">
-            <div
-              class="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div
-                class="service-item d-flex flex-column text-center"
-                style="
-                  padding: 30px;
-                  background: white;
-                  border-radius: 15px;
-                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                  height: 100%;
-                "
-              >
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item gradient-orange d-flex flex-column text-center">
                 <div class="icon mb-3">
-                  <i
-                    class="bi bi-eye"
-                    style="color: #f57813; font-size: 3em"
-                  ></i>
+                  <i class="bi bi-eye"></i>
                 </div>
                 <h4 class="title">Vad appen gör</h4>
                 <p class="description">
@@ -472,26 +508,10 @@
               </div>
             </div>
 
-            <div
-              class="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div
-                class="service-item d-flex flex-column text-center"
-                style="
-                  padding: 30px;
-                  background: white;
-                  border-radius: 15px;
-                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                  height: 100%;
-                "
-              >
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-item gradient-green d-flex flex-column text-center">
                 <div class="icon mb-3">
-                  <i
-                    class="bi bi-lightbulb"
-                    style="color: #15a04a; font-size: 3em"
-                  ></i>
+                  <i class="bi bi-lightbulb"></i>
                 </div>
                 <h4 class="title">Varför det är relevant</h4>
                 <p class="description">
@@ -502,26 +522,10 @@
               </div>
             </div>
 
-            <div
-              class="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div
-                class="service-item d-flex flex-column text-center"
-                style="
-                  padding: 30px;
-                  background: white;
-                  border-radius: 15px;
-                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                  height: 100%;
-                "
-              >
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-item gradient-pink d-flex flex-column text-center">
                 <div class="icon mb-3">
-                  <i
-                    class="bi bi-phone"
-                    style="color: #d90769; font-size: 3em"
-                  ></i>
+                  <i class="bi bi-phone"></i>
                 </div>
                 <h4 class="title">Hur enkelt det är</h4>
                 <p class="description">
@@ -531,26 +535,10 @@
               </div>
             </div>
 
-            <div
-              class="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <div
-                class="service-item d-flex flex-column text-center"
-                style="
-                  padding: 30px;
-                  background: white;
-                  border-radius: 15px;
-                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                  height: 100%;
-                "
-              >
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="service-item gradient-blue d-flex flex-column text-center">
                 <div class="icon mb-3">
-                  <i
-                    class="bi bi-graph-up-arrow"
-                    style="color: #4233ff; font-size: 3em"
-                  ></i>
+                  <i class="bi bi-graph-up-arrow"></i>
                 </div>
                 <h4 class="title">Vad du tjänar på det</h4>
                 <p class="description">
@@ -817,6 +805,30 @@
         }
       }
 
+      function handleStickyDownload(event) {
+        event.preventDefault();
+        scrollToDownload();
+      }
+
+      // Show/hide sticky CTA based on scroll position
+      function handleStickyCtaVisibility() {
+        const heroSection = document.getElementById('hero');
+        const stickyCta = document.querySelector('.sticky-cta');
+        
+        if (heroSection && stickyCta) {
+          const heroRect = heroSection.getBoundingClientRect();
+          const heroBottomVisible = heroRect.bottom > 100; // 100px margin
+          
+          if (heroBottomVisible) {
+            stickyCta.classList.remove('show');
+            document.body.classList.add('hero-visible');
+          } else {
+            stickyCta.classList.add('show');
+            document.body.classList.remove('hero-visible');
+          }
+        }
+      }
+
       function toggleFAQ(element) {
         const answer = element.nextElementSibling;
         const icon = element.querySelector("i");
@@ -848,6 +860,12 @@
         const userAgent = navigator.userAgent.toLowerCase();
         const isAndroid = userAgent.indexOf("android") > -1;
         const isIOS = /iphone|ipad|ipod/.test(userAgent);
+
+        // Initialize sticky CTA visibility
+        handleStickyCtaVisibility();
+        
+        // Add scroll listener for sticky CTA
+        window.addEventListener('scroll', handleStickyCtaVisibility);
 
         // Device-specific targeting could be added here if needed
       });
@@ -886,5 +904,11 @@
       // Kör när sidan laddas
       document.addEventListener('DOMContentLoaded', addPersonalTouch);
     </script>
+
+    <!-- Sticky Download Button -->
+    <a href="#" class="sticky-cta" onclick="handleStickyDownload(event)">
+      <i class="bi bi-download"></i>
+      Ladda ner
+    </a>
   </body>
 </html>
