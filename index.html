@@ -804,19 +804,50 @@
 
     <script>
       function scrollToDownload() {
+        // Spåra event med Facebook Pixel
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', {
+            content_name: 'Download App Button Click',
+            content_category: 'App Download'
+          });
+        }
+        
         // Detektera användarens enhet
         const userAgent = navigator.userAgent.toLowerCase();
         const isIOS = /iphone|ipad|ipod/.test(userAgent);
         const isAndroid = /android/.test(userAgent);
         
         if (isIOS) {
+          // Spåra specifikt iOS download
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'ViewContent', {
+              content_name: 'iOS App Store Click',
+              content_category: 'App Download',
+              platform: 'iOS'
+            });
+          }
           // Dirigera till App Store för iOS
           window.open('https://apps.apple.com/us/app/insynskollen/id6737434122', '_blank');
         } else if (isAndroid) {
+          // Spåra specifikt Android download
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'ViewContent', {
+              content_name: 'Google Play Store Click',
+              content_category: 'App Download',
+              platform: 'Android'
+            });
+          }
           // Dirigera till Play Store för Android
           window.open('https://play.google.com/store/apps/details?id=com.devember.Insynskollen', '_blank');
         } else {
           // För andra enheter (desktop etc.), rulla ner till download-sektionen
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'ViewContent', {
+              content_name: 'Desktop Download Section View',
+              content_category: 'App Download',
+              platform: 'Desktop'
+            });
+          }
           document.getElementById("download").scrollIntoView({
             behavior: "smooth",
           });
