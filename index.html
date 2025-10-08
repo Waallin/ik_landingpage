@@ -62,6 +62,16 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17629699317"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17629699317');
+    </script>
+
     <style>
       .urgent-cta {
         background: linear-gradient(135deg, #e74c3c, #c0392b);
@@ -812,6 +822,15 @@
             content_name: 'Download App Button Click',
             content_category: 'App Download'
           });
+        }
+        
+        // Google Ads konverteringsspårning för "Klickat ladda ner"
+        if (typeof gtag !== 'undefined') {
+          try {
+
+          } catch (error) {
+          gtag('event', 'conversion', {'send_to': 'AW-17629699317/LY3mCLKMmakbEPW5v9ZB'});
+          console.log('Google Ads konverteringsspårning för "Klickat ladda ner"');
         }
         
         // Detektera användarens enhet
