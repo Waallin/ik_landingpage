@@ -825,13 +825,14 @@
         }
         
         // Google Ads konverteringsspårning för "Klickat ladda ner"
-        if (typeof gtag !== 'undefined') {
-          try {
+        
+          
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17629699317/LY3mCLKMmakbEPW5v9ZB'
+        });
 
-          } catch (error) {
-          gtag('event', 'conversion', {'send_to': 'AW-17629699317/LY3mCLKMmakbEPW5v9ZB'});
-          console.log('Google Ads konverteringsspårning för "Klickat ladda ner"');
-        }
+
+        
         
         // Detektera användarens enhet
         const userAgent = navigator.userAgent.toLowerCase();
