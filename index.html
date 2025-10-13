@@ -825,12 +825,17 @@
         }
         
         // Google Ads konverteringsspårning för "Klickat ladda ner"
-        
-          
         gtag('event', 'conversion', {
           'send_to': 'AW-17629699317/LY3mCLKMmakbEPW5v9ZB'
         });
 
+
+        // Spåra händelse i Google Analytics 4 
+        gtag('event', 'cta_click', {
+          event_category: 'engagement',
+          event_label: 'Download App Button',
+          value: 1
+        });
 
         
         
