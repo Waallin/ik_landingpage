@@ -845,19 +845,20 @@
 
         if (isIOS) {
           sendTiktokEvent('ViewContent', {
-            content_name: 'iOS App Store Click',
+            content_id: 'app_store_ios',
+            content_name: 'App Store Click',
             content_category: 'App Download',
-            platform: 'iOS'
+            store: 'app_store'
           });
 
           // Dirigera till App Store för iOS
           window.open('https://apps.apple.com/us/app/insynskollen/id6737434122', '_blank');
         } else if (isAndroid) {
-          //
           sendTiktokEvent('ViewContent', {
-            content_name: 'Android App Store Click',
+            content_id: 'google_play_android',
+            content_name: 'Google Play Click',
             content_category: 'App Download',
-            platform: 'Android'
+            store: 'google_play'
           });
 
           // Dirigera till Play Store för Android
