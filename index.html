@@ -830,36 +830,13 @@
 
     <script>
 
+      // Send Tiktok event to Tiktok Analytics
       function sendTiktokEvent(event_name, event_data) {
         ttq.track(event_name, event_data);
         console.log("Tiktok event sent: " + event_name);
       }
 
       function scrollToDownload() {
-        sendTiktokEvent('Lead', {
-          content_name: 'Download App Button Click',
-          content_category: 'App Download'
-        });
-        /*
-        if (typeof fbq !== 'undefined') {
-          fbq('track', 'Lead', {
-            content_name: 'Download App Button Click',
-            content_category: 'App Download'
-          });
-        }
-        */
-
-        // Google Ads konverteringsspårning för "Klickat ladda ner"
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17629699317/LY3mCLKMmakbEPW5v9ZB'
-        });
-
-        // Spåra händelse i Google Analytics 4 
-        gtag('event', 'cta_click', {
-          event_category: 'engagement',
-          event_label: 'Download App Button',
-          value: 1
-        });
 
         // Detektera användarens enhet
         const userAgent = navigator.userAgent.toLowerCase();
@@ -867,42 +844,25 @@
         const isAndroid = /android/.test(userAgent);
 
         if (isIOS) {
-          // Spåra specifikt iOS download
-          /*
-          if (typeof fbq !== 'undefined') {
-            fbq('track', 'ViewContent', {
-              content_name: 'iOS App Store Click',
-              content_category: 'App Download',
-              platform: 'iOS'
-            });
-          }
-          */
+          sendTiktokEvent('ViewContent', {
+            content_name: 'iOS App Store Click',
+            content_category: 'App Download',
+            platform: 'iOS'
+          });
+
           // Dirigera till App Store för iOS
           window.open('https://apps.apple.com/us/app/insynskollen/id6737434122', '_blank');
         } else if (isAndroid) {
-          // Spåra specifikt Android download
-          /*
-          if (typeof fbq !== 'undefined') {
-            fbq('track', 'ViewContent', {
-              content_name: 'Google Play Store Click',
-              content_category: 'App Download',
-              platform: 'Android'
-            });
-          }
-          */
+          //
+          sendTiktokEvent('ViewContent', {
+            content_name: 'Android App Store Click',
+            content_category: 'App Download',
+            platform: 'Android'
+          });
+
           // Dirigera till Play Store för Android
           window.open('https://play.google.com/store/apps/details?id=com.devember.Insynskollen', '_blank');
         } else {
-          // För andra enheter (desktop etc.), rulla ner till download-sektionen
-          /*
-          if (typeof fbq !== 'undefined') {
-            fbq('track', 'ViewContent', {
-              content_name: 'Desktop Download Section View',
-              content_category: 'App Download',
-              platform: 'Desktop'
-            });
-          }
-          */
           document.getElementById("download").scrollIntoView({
             behavior: "smooth",
           });
